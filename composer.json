@@ -1,0 +1,17 @@
+{
+    "name": "slim/project",
+    "description": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Slim\\Project\\": "src/"
+        }
+    },
+    "require": {
+        "slim/slim": "^4.12",
+        "slim/psr7": "^1.6",
+        "slim/http": "^1.3",
+        "slim/php-view": "^3.2",
+        "php-di/php-di": "^7.0"
+    }
+}
