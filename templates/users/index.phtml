@@ -1,0 +1,42 @@
+<?php if (count($flash) > 0) : ?>
+    <div>
+        <?php foreach ($flash as $messages) : ?>
+            <?php foreach ($messages as $message) : ?>
+                <?= $message ?><br>
+            <?php endforeach ?>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
+<div>
+    <form action="/session" method="post">
+        <input type="hidden" name="_METHOD" value="DELETE">
+        <input type="submit" value="Log Out">
+    </form>
+</div>
+<hr>
+<form action="/users" method="get">
+    <input type="search" name="term" value="<?= htmlspecialchars($term) ?>" />
+    <input type="submit" value="Search" />
+</form>
+<hr>
+<form action="/users/new" method="get">
+    <input type="submit" value="New user" />
+</form>
+<hr>
+<div>
+    <p>Нажмите на пользователя для его просмотра</p>
+</div>
+<ul>
+    <?php foreach ($filteredUsers as $filteredUser): ?>
+        <li>
+            <a href="/users/<?= htmlspecialchars($filteredUser['id']) ?>"><?= htmlspecialchars($filteredUser['nickname']) ?></a>
+        </li>
+    <?php endforeach ?>
+</ul>
+<hr>
+<div>
+    <a href="?page=<?= $page < 2 ? 1 : $page - 1 ?>">Prev (-5)</a> <a href="?page=<?= $page + 1 ?>">Next (+5)</a>
+</div>
+<div>
+    <p>Общее количество пользователей:&ensp;<?= $usersTotal ?></p>
+</div>

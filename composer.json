@@ -13,6 +13,16 @@
         "slim/http": "^1.3",
         "slim/php-view": "^3.2",
         "php-di/php-di": "^7.0",
-        "fzaninotto/faker": "^1.5"
-    }
+        "fzaninotto/faker": "^1.5",
+        "symfony/string": "^6.3",
+        "kris/laravel-form-builder": "^1.52",
+        "slim/twig-view": "^3.3",
+        "slim/flash": "^0.4.0"
+    },
+    "authors": [
+        {
+            "name": "Sergey Sviridenko",
+            "email": "beliy-81@mail.ru"
+        }
+    ]
 }

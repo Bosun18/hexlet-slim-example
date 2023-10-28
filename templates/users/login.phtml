@@ -1,0 +1,39 @@
+<?php if (count($flash) > 0) : ?>
+    <div>
+        <?php foreach ($flash as $messages) : ?>
+            <?php foreach ($messages as $message) : ?>
+                <?= $message ?><br>
+            <?php endforeach ?>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
+    <h1>Login</h1>
+    <hr>
+    <div>
+        <p>
+            Подсказка: admin / admin
+        </p>
+    </div>
+<?php if ($currentUser): ?>
+    <div><?= $currentUser['name'] ?></div>
+    <form action="/session" method="post">
+        <input type="hidden" name="_METHOD" value="DELETE">
+        <input type="submit" value="Log Out">
+    </form>
+<?php else: ?>
+    <form action="/session" method="post">
+        <div>
+            <label>
+                *Name:
+                <input type="text" required name="user[name]" value="">
+            </label>
+        </div>
+        <div>
+            <label>
+                *Pass:&ThickSpace;&ThickSpace;
+                <input type="password" required name="user[password]" value="" autocomplete="new-password">
+            </label>
+        </div>
+        <input type="submit" value="Log In">
+    </form>
+<?php endif; ?>

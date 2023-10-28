@@ -1,0 +1,20 @@
+<h1>Show User</h1>
+<hr>
+<p>id = <?= htmlspecialchars($user['id']) ?></p>
+<p>nickname = <?= htmlspecialchars($user['nickname']) ?></p>
+<p>email = <?= htmlspecialchars($user['email']) ?></p>
+<hr>
+<form action="/users/<?= $user['id'] ?>/edit" method="get">
+    <input type="submit" value="Edit user">
+</form>
+<form action="/users/<?= $user['id'] ?>" method="post">
+    <input type="hidden" name="_METHOD" value="DELETE">
+    <p>
+        <input type="submit" value="Delete user">
+        <input type="checkbox" name="confirmation" value="yes">
+        Yes, I'm sure!
+    </p>
+</form>
+<form action="/users" method="get">
+    <input type="submit" value="Back">
+</form>
