@@ -4,8 +4,8 @@ namespace Slim\Project;
 
 class Database
 {
-    private $users;
-    private $path = __DIR__ . "/../database.json";
+    private mixed $users;
+    private string $path = __DIR__ . "/../database.json";
 
     public function __construct()
     {
